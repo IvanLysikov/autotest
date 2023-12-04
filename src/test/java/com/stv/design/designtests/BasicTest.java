@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.stv.framework.core.lib.truedranikURLs.START_URL;
+import static com.stv.framework.core.lib.TruedranikURLs.START_URL;
 
 public class BasicTest {
 

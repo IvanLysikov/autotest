@@ -6,20 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class WiggleMainPage extends Page {
 
-    private final By REGISTER_LINK_LOCATOR = By.id("btnJoinLink");
     private final By ACCEPT_COOKIES_BUTTON = By.id("truste-consent-required");
-    private final By SIGN_IN_LINK_LOCATOR = By.cssSelector("btnSignIn");
-    private final By PANCAKES_LINK = By.linkText("Дранікі");
+    private final By SIGN_IN_LINK_LOCATOR = By.cssSelector("button[aria-label='Sign in']");
     private final By LOGO_LOCATOR = By.cssSelector("Header_logo__V9h3K");
 
     public WiggleMainPage(WebDriver driver) {
         super(driver);
-    }
-
-
-    public boolean isRegisterLinkDisplayed(){
-        WebElement registerLink = getDriver().findElement(REGISTER_LINK_LOCATOR);
-        return registerLink.isDisplayed();
     }
 
     public boolean isMainLogoDisplayed(){
@@ -27,9 +19,13 @@ public class WiggleMainPage extends Page {
         return logoImage.isDisplayed();
     }
 
-    public boolean isSignInLinkDisplayed(){
+    public void clickOnSignIn() {
         WebElement signInLink = getDriver().findElement(SIGN_IN_LINK_LOCATOR);
-        return signInLink.isDisplayed();
+        signInLink.click();
     }
 
+    public void acceptCookies() {
+        WebElement cookiesButton = getDriver().findElement(ACCEPT_COOKIES_BUTTON);
+        cookiesButton.click();
+    }
 }

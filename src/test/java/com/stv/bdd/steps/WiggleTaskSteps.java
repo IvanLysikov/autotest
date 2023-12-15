@@ -85,6 +85,22 @@ public class WiggleTaskSteps extends BasicTest {
         wiggleSignUpPage.clickContinue();
     }
 
+    @When("^The User enters \"([^\"]*)\" in Email address field$")
+    public void enterNotValidEmail(String notValidEmail) {
+        wiggleSignUpPage.enterNotValidEmail(notValidEmail);
+    }
+
+    @And("^The User enters valid password in Password field$")
+    public void enterValidPassword() {
+        wiggleSignUpPage.enterValidPassword();
+    }
+
+    @Then("^Validation message in Email address fiels appears$")
+    public void emailValidationErrorMessageAppears() {
+        String actualResult = wiggleSignUpPage.isEmailValidationErrorMessageDisplayed();
+        Assert.assertEquals(actualResult, "Email is not valid.", "Email validation error message isn't displayed");
+    }
+
 
     private void sleep(int seconds) {
         getDriver().manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);

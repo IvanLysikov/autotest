@@ -7,9 +7,6 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.stv.framework.core.lib.TruedranikURLs.START_URL;
-
-
 public class BasicFactoryTest {
     public static WebDriver getDriver() {
         return Driver.getDriver();
@@ -18,7 +15,7 @@ public class BasicFactoryTest {
     @BeforeClass(description = "Start browser")
     public void setUp() {
         WebDriver driver = getDriver();
-        driver.get(START_URL);
+        driver.get(getUrl());
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
@@ -26,5 +23,9 @@ public class BasicFactoryTest {
     @AfterClass
     public void afterClass() throws Exception {
         getDriver().quit();
+    }
+
+    protected String getUrl() {
+        return null;
     }
 }

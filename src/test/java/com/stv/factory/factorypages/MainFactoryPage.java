@@ -6,20 +6,20 @@ import org.openqa.selenium.support.FindBy;
 public class MainFactoryPage extends FactoryPage {
 
     @FindBy(css = "[aria-label='Sign in']")
-    private WebElement accountLink;
+    private WebElement signInLink;
 
     @FindBy(xpath = "//button[contains(text(),'Accept all')]")
     private WebElement trustButton;
 
-    public boolean isAccountLinkDisplayed(){
-        return accountLink.isDisplayed();
+    public boolean isSignInLinkDisplayed() {
+        return signInLink.isDisplayed();
     }
 
-    public void clickOnAccountLink(){
-        accountLink.click();
+    public void clickOnSignIn() {
+        signInLink.click();
     }
 
-    public void clickOnTrustButton(){
+    public void clickOnTrustButton() {
         trustButton.click();
     }
 }

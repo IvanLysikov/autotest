@@ -7,8 +7,6 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.stv.framework.core.lib.TruedranikURLs.START_URL;
-
 public class BasicTest {
 
     protected WebDriver driver;
@@ -30,7 +28,7 @@ public class BasicTest {
         getDriver().quit();
     }
 
-    private String url(){
-        return START_URL;
+    protected String url() {
+        return null;
     }
 }

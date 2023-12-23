@@ -1,4 +1,5 @@
 Feature: Wiggle Task
+
   Scenario: 01. Open Wiggle Home page
     Given Wiggle start page opened by default
     When The user click sign in

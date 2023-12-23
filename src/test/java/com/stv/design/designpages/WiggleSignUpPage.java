@@ -7,14 +7,10 @@ import org.openqa.selenium.WebElement;
 public class WiggleSignUpPage extends Page {
 
     private final By SIGN_UP_MESSAGE_LOCATOR = By.xpath("//main//p[contains(., 'Create your account to continue')]");
-
     private final By CONTINUE_BUTTON_LOCATOR = By.cssSelector("button[type='submit']");
-
     private final By EMAIL_INPUT_LOCATOR = By.id("email");
-
     private final By PASSWORD_INPUT_LOCATOR = By.id("password");
     private final By EMAIL_VALIDATION_MESSAGE = By.id("error-element-email");
-
 
     public WiggleSignUpPage(WebDriver driver) {
         super(driver);

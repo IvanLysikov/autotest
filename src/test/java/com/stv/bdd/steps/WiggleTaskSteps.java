@@ -21,7 +21,6 @@ public class WiggleTaskSteps extends BasicTest {
     WiggleSignInPage wiggleSignInPage;
     WiggleSignUpPage wiggleSignUpPage;
 
-
     @Given("^Wiggle start page opened by default$")
     public void wiggleSetupMainPage() throws Throwable {
         openWiggleMainPage();
@@ -52,7 +51,7 @@ public class WiggleTaskSteps extends BasicTest {
     public void wiggleSetupSignInPage() throws Throwable {
         openWiggleMainPage();
         pressSignIn();
-        sleep(3);
+        waiting(3);
     }
 
     @When("^The user click sign up$")
@@ -67,12 +66,11 @@ public class WiggleTaskSteps extends BasicTest {
         Assert.assertEquals(actualResult, true, "Sign up page isn't loaded");
     }
 
-
     @Given("^Sign up page opened$")
     public void wiggleSetupSignUpPage() throws Throwable {
         wiggleSetupSignInPage();
         pressSignUp();
-        sleep(3);
+        waiting(3);
     }
 
     @When("^User enter valid email$")
@@ -101,9 +99,7 @@ public class WiggleTaskSteps extends BasicTest {
         Assert.assertEquals(actualResult, "Email is not valid.", "Email validation error message isn't displayed");
     }
 
-
-    private void sleep(int seconds) {
+    private void waiting(int seconds) {
         getDriver().manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
-
     }
 }

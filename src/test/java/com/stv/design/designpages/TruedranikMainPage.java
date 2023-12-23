@@ -13,7 +13,7 @@ public class TruedranikMainPage extends Page {
         super(driver);
     }
 
-    public boolean isPancakesLinkDisplayed(){
+    public boolean isPancakesLinkDisplayed() {
         WebElement pancakeLink = getDriver().findElement(PANCAKE_LINK);
         return pancakeLink.isDisplayed();
     }

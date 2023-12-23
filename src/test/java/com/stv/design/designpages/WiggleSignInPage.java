@@ -14,7 +14,6 @@ public class WiggleSignInPage extends Page {
         super(driver);
     }
 
-
     public boolean isSignInPageDisplayed() {
         WebElement loginMessage = getDriver().findElement(LOGIN_MESSAGE_LOCATOR);
         String loginMessageText = loginMessage.getText();
